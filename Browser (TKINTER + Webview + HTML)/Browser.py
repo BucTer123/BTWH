@@ -112,11 +112,25 @@ html """
     btn3.addEventListener("click", function () {
         exit(0);
     });
+
+    document.addEventListener("keydown", function () {
+        if (event.key === "enter") {
+            const go2 = inp1.value;
+
+            if (go2 === "") {
+                window.alert("ERROR!: Write domain!");
+            } else {
+                window.open(go2, "_blank");
+            }
+        }
+    });
 </script>
 </html>
 """
 
-
-def starter_comm():
+def main():
     webview.create_window("Gui", html=html)
     webview.start()
+
+if __name__ == "__main__":
+    main()
